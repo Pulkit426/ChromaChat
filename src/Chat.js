@@ -4,6 +4,8 @@ import {Avatar, IconButton} from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
+import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
 
 const Chat = () => {
   return (
@@ -59,8 +61,21 @@ const Chat = () => {
 
 
         </p>
-      </div>  
+      </div>
+
+    <div className="chat__footer">
+      <InsertEmoticonOutlinedIcon />
+
+      <form>
+        <input placeholder="Type a message" type="text" />
+        <button type='submit'> Send </button>
+      </form>
+
+      <MicNoneOutlinedIcon />
+
+    </div>  
     </div>
+
 )}
 
 export default Chat
