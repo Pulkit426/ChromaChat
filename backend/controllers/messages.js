@@ -3,7 +3,8 @@ const router = require('express').Router()
 const Message = require('../models/message')
 
 router.get('/', (req,res) => {
-    Message.find((err,data) => {
+    Message.find(
+        (err,data) => {
         if(err){
             res.status(500).send(err)
         }
