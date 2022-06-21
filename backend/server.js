@@ -2,9 +2,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Pusher = require("pusher");
 const app = express()
+const cors = require('cors')
 const port= process.env.PORT || 3001
 
 app.use(express.json())
+app.use(cors())
 const messagesRouter = require('./controllers/messages')
 
 
