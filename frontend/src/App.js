@@ -28,6 +28,11 @@ function App() {
       setMessages([...messages,newMessage])
     });
 
+    return () => {
+      channel.unbind_all()
+      channel.unsubscribe()
+    }
+
   }, [messages])
 
   console.log(messages)
