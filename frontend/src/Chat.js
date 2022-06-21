@@ -6,8 +6,11 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
 import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
+import { useSelector } from 'react-redux';
 
 const Chat = () => {
+  const messages = useSelector(state => state)
+  console.log("INISDE CHAT COMPONENT",messages)
   return (
     <div className='chat'>
         <div className="chat__header">
@@ -35,17 +38,21 @@ const Chat = () => {
         </div>
 
       <div className="chat__body">
-        <p className='chat__message'>
+        {messages && messages.slice().map((message) => {
+            <p className='chat__message'>
           <span className="chat__name">
-            Pulkit
+            {message.user}
           </span>
 
-          This is message
+          {message.message}
 
           <span className="chat__timestamp">
-            {new Date().toUTCString()}
+            {message.timestamp}
           </span>
         </p>
+
+        })}
+        
 
 
         <p className='chat__message chat__receiver'>

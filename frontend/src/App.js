@@ -4,36 +4,40 @@ import Chat from './Chat';
 import Sidebar from './Sidebar';
 import Pusher from 'pusher-js'
 import messageService from './services/messages'
+import { useDispatch, useSelector } from 'react-redux';
+import { intitializeMessages, newMessage } from './reducers/messages';
 
 function App() {
-  const [messages, setMessages] = useState([])
+  const dispatch = useDispatch()
+  const messages = useSelector(state => state)
+
+  // const [messages, setMessages] = useState([])
   
   const initializeAllMessages = async () => {
     const allMessages = await messageService.getAll()
-    setMessages(allMessages)
+    dispatch(intitializeMessages(allMessages))
   }
 
   useEffect(() => {
     initializeAllMessages()
   }, [])
 
-  useEffect(() => {
-    const pusher = new Pusher('a71c2a5658b701ee38fc', {
-      cluster: 'ap2'
-    });
+  // useEffect(() => {
+  //   const pusher = new Pusher('a71c2a5658b701ee38fc', {
+  //     cluster: 'ap2'
+  //   });
 
-    const channel = pusher.subscribe('messages');
-    channel.bind('inserted', function(newMessage) {
-      alert(JSON.stringify(newMessage));
-      setMessages([...messages,newMessage])
-    });
+  //   const channel = pusher.subscribe('messages');
+  //   channel.bind('inserted', (newMessage) => {
+  //     setMessages([...messages,newMessage])
+  //   })
 
-    return () => {
-      channel.unbind_all()
-      channel.unsubscribe()
-    }
+  //   return () => {
+  //     channel.unbind_all()
+  //     channel.unsubscribe()
+  //   }
 
-  }, [messages])
+  // }, [messages])
 
   console.log(messages)
 
