@@ -10,8 +10,6 @@ import { intitializeMessages, newMessage } from './reducers/messages';
 function App() {
   const dispatch = useDispatch()
   const messages = useSelector(state => state)
-
-  // const [messages, setMessages] = useState([])
   
   const initializeAllMessages = async () => {
     const allMessages = await messageService.getAll()
@@ -22,22 +20,22 @@ function App() {
     initializeAllMessages()
   }, [])
 
-  // useEffect(() => {
-  //   const pusher = new Pusher('a71c2a5658b701ee38fc', {
-  //     cluster: 'ap2'
-  //   });
+  useEffect(() => {
+    const pusher = new Pusher('a71c2a5658b701ee38fc', {
+      cluster: 'ap2'
+    });
 
-  //   const channel = pusher.subscribe('messages');
-  //   channel.bind('inserted', (newMessage) => {
-  //     setMessages([...messages,newMessage])
-  //   })
+    const channel = pusher.subscribe('messages');
+    channel.bind('inserted', (message) => {
+      dispatch(newMessage(message))
+    })
 
-  //   return () => {
-  //     channel.unbind_all()
-  //     channel.unsubscribe()
-  //   }
+    return () => {
+      channel.unbind_all()
+      channel.unsubscribe()
+    }
 
-  // }, [messages])
+  }, [messages])
 
   console.log(messages)
 

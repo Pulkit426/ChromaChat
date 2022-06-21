@@ -39,9 +39,11 @@ const Chat = () => {
 
       <div className="chat__body">
         {messages && messages.slice().map((message) => {
-            <p className='chat__message'>
+          console.log("MSG", message)
+          return (
+            <p className={`chat__message ${message.received && 'chat__receiver'}`}>
           <span className="chat__name">
-            {message.user}
+            {message.name}
           </span>
 
           {message.message}
@@ -49,25 +51,10 @@ const Chat = () => {
           <span className="chat__timestamp">
             {message.timestamp}
           </span>
-        </p>
+        </p>)
 
         })}
         
-
-
-        <p className='chat__message chat__receiver'>
-          <span className="chat__name">
-            Pulkit
-          </span>
-
-          This is message
-
-          <span className="chat__timestamp">
-            {new Date().toUTCString()}
-          </span>
-
-
-        </p>
       </div>
 
     <div className="chat__footer">

@@ -18,7 +18,7 @@ export const intitializeMessages = (messages) => {
 export const newMessage = (message) => {
     return {
         type: 'NEW_MESSAGE',
-        data: {message}
+        data: message
     }
 }
 
