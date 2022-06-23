@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Chat.css'
 import {Avatar, IconButton} from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -11,6 +11,13 @@ import { useSelector } from 'react-redux';
 const Chat = () => {
   const messages = useSelector(state => state)
   console.log("INISDE CHAT COMPONENT",messages)
+
+  const [input,setInput] = useState('')
+
+  const sendMessage = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <div className='chat'>
         <div className="chat__header">
@@ -39,7 +46,6 @@ const Chat = () => {
 
       <div className="chat__body">
         {messages && messages.slice().map((message) => {
-          console.log("MSG", message)
           return (
             <p className={`chat__message ${message.received && 'chat__receiver'}`}>
           <span className="chat__name">
@@ -61,8 +67,10 @@ const Chat = () => {
       <InsertEmoticonOutlinedIcon />
 
       <form>
-        <input placeholder="Type a message" type="text" />
-        <button type='submit'> Send </button>
+        <input value={input} 
+               onChange= {(event) => setInput(event.target.value) }
+               placeholder="Type a message" type="text" />
+        <button onClick={sendMessage} type='submit'> Send </button>
       </form>
 
       <MicNoneOutlinedIcon />
