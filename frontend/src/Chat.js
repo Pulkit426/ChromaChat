@@ -6,16 +6,30 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
 import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import messageService from './services/messages'
+import { newMessage } from './reducers/messages';
 
 const Chat = () => {
+  const dispatch = useDispatch()
   const messages = useSelector(state => state)
   console.log("INISDE CHAT COMPONENT",messages)
 
-  const [input,setInput] = useState('')
+  const [messageInput,setMessageInput] = useState('')
 
-  const sendMessage = (event) => {
+  const sendMessage = async (event) => {
     event.preventDefault()
+
+    const msg = await messageService.create({
+      name: "Pulkit",
+      message: messageInput,
+      timestamp: new Date(),
+      received: false
+    })
+
+    dispatch(newMessage(msg))
+    setMessageInput('')
+    
   }
 
   return (
@@ -67,9 +81,10 @@ const Chat = () => {
       <InsertEmoticonOutlinedIcon />
 
       <form>
-        <input value={input} 
-               onChange= {(event) => setInput(event.target.value) }
-               placeholder="Type a message" type="text" />
+        <input value={messageInput} 
+               onChange= {(event) => setMessageInput(event.target.value) }
+               placeholder="Type a message" 
+               type="text" />
         <button onClick={sendMessage} type='submit'> Send </button>
       </form>
 
