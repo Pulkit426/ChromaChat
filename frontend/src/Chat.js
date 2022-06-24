@@ -80,12 +80,13 @@ const Chat = () => {
     <div className="chat__footer">
       <InsertEmoticonOutlinedIcon />
 
-      <form>
+      <form onSubmit={sendMessage}>
         <input value={messageInput} 
                onChange= {(event) => setMessageInput(event.target.value) }
                placeholder="Type a message" 
-               type="text" />
-        <button onClick={sendMessage} type='submit'> Send </button>
+               type="text" 
+               required />
+        <button type='submit'> Send </button>
       </form>
 
       <MicNoneOutlinedIcon />
