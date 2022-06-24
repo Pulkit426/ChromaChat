@@ -17,13 +17,24 @@ const Chat = () => {
 
   const [messageInput,setMessageInput] = useState('')
 
+  const setISTTime = () => { 
+    var dateUTC = new Date();
+  var dateUTC = dateUTC.getTime() 
+  var dateIST = new Date(dateUTC);
+  //date shifting for IST timezone (+5 hours and 30 minutes)
+  dateIST.setHours(dateIST.getHours() + 5); 
+  dateIST.setMinutes(dateIST.getMinutes() + 30);
+  return dateIST
+  }
+    
+
   const sendMessage = async (event) => {
     event.preventDefault()
 
     const msg = await messageService.create({
       name: "Pulkit",
       message: messageInput,
-      timestamp: new Date(),
+      timestamp: setISTTime(),
       received: false
     })
 
