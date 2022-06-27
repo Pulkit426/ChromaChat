@@ -7,8 +7,8 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
 import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
 import { useDispatch, useSelector } from 'react-redux';
-import messageService from './services/messages'
-import { newMessage } from './reducers/messages';
+import messageService from '../services/messages'
+import { newMessage } from '../reducers/messages';
 
 const Chat = () => {
   const dispatch = useDispatch()

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Chat from './Chat';
-import Sidebar from './Sidebar';
+import Chat from './components/Chat';
+import Sidebar from './components/Sidebar';
 import Pusher from 'pusher-js'
 import messageService from './services/messages'
 import { useDispatch, useSelector } from 'react-redux';
