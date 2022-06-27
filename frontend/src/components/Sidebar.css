@@ -52,6 +52,18 @@
 
 }
 
+.sidebar__newChatRoom{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 1px solid #f6f6f6;
+}
+
+.sidebar__newChatRoom:hover{
+    background-color: #a8ddba;
+}
+
 .sidebar__chats{
     flex: 1;
     background-color: white;

@@ -44,7 +44,12 @@ const Sidebar = () => {
           </div>
         </div>
 
+         <div className="sidebar__newChatRoom">
+         <h3> +  Add New Room </h3>       
+        </div>
+
         <div className="sidebar__chats">
+         
         {rooms && rooms.map(room => <SidebarChat room={room} />)}
         </div>
 
