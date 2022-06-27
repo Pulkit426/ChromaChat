@@ -18,7 +18,7 @@ router.get('/', (req,res) => {
 router.post('/', (req,res) => {
     const newRoom = req.body
 
-    Message.create(newRoom, (err,data) => {
+    Room.create(newRoom, (err,data) => {
         if(err){
             res.status(500).send(err)
         }
