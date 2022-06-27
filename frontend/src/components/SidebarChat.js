@@ -2,12 +2,12 @@ import React from 'react'
 import './SidebarChat.css'
 import {Avatar} from '@mui/material'
 
-const SidebarChat = () => {
+const SidebarChat = (props) => {
   return (
     <div className='sidebarChat'>
        <Avatar />
         <div className="sidebarChat__info">
-            <h2> Room Name </h2>
+            <h2> {props.room.name} </h2>
             <p> Last message </p>
         </div>
     </div>

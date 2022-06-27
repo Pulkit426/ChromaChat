@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Sidebar.css'
 import {Avatar, IconButton} from '@mui/material'
 import ChatIcon from '@mui/icons-material/Chat';
@@ -6,8 +6,15 @@ import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SidebarChat from './SidebarChat';
+import roomService from '../services/rooms'
 
 const Sidebar = () => {
+  const [rooms, setRooms] = useState([])
+
+  useEffect(() => {
+    roomService.getAll().then(data => setRooms(data))
+  }, [])
+
   return (
     <div className='sidebar'>
         <div className='sidebar__header'>
@@ -38,9 +45,7 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar__chats">
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
+        {rooms && rooms.map(room => <SidebarChat room={room} />)}
         </div>
 
         
