@@ -15,6 +15,12 @@ const Sidebar = () => {
     roomService.getAll().then(data => setRooms(data))
   }, [])
 
+  const createChat = async () => {
+    const roomName = window.prompt("Enter the name of the room")
+    const newRoom = await roomService.create({name: roomName})
+    setRooms(prevRooms => [...prevRooms, newRoom])
+  }
+
   return (
     <div className='sidebar'>
         <div className='sidebar__header'>
@@ -44,7 +50,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-         <div className="sidebar__newChatRoom">
+         <div onClick={createChat} className="sidebar__newChatRoom">
          <h3> +  Add New Room </h3>       
         </div>
 
