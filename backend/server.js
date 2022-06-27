@@ -8,7 +8,8 @@ const port= process.env.PORT || 3001
 app.use(express.json())
 app.use(cors())
 const messagesRouter = require('./controllers/messages')
-
+const roomRouter = require('./controllers/rooms')
+ 
 
 const pusher = new Pusher({
     appId: "1426241",
@@ -48,6 +49,6 @@ db.once('open', () => {
 
   
 app.use('/api/messages', messagesRouter)
-app.get('/', (req,res) => res.status(200).send("HELLO"))
+app.use('/api/rooms', messagesRouter)
 
 app.listen(port, () => console.log(`Listening to port ${port}`))
