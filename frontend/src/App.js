@@ -7,18 +7,28 @@ import messageService from './services/messages'
 import { useDispatch, useSelector } from 'react-redux';
 import { intitializeMessages, newMessage } from './reducers/messages';
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import roomService from './services/rooms'
+import {intitializeRooms} from './reducers/rooms'
 
 function App() {
   const dispatch = useDispatch()
   const messages = useSelector(state => state.messages)
+  const rooms = useSelector(state => state.rooms)
   
   const initializeAllMessages = async () => {
     const allMessages = await messageService.getAll()
     dispatch(intitializeMessages(allMessages))
   }
 
+  const initializeAllRooms = async () => {
+    const allRooms = await roomService.getAll()
+    dispatch(intitializeRooms(allRooms))
+    console.log("ROOMS USEEFFECT", rooms)
+  }
+
   useEffect(() => {
     initializeAllMessages()
+    initializeAllRooms()
   }, [])
 
   useEffect(() => {
