@@ -7,6 +7,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SidebarChat from './SidebarChat';
 import roomService from '../services/rooms'
+import {Link} from 'react-router-dom'
 
 const Sidebar = () => {
   const [rooms, setRooms] = useState([])
@@ -60,7 +61,7 @@ const Sidebar = () => {
 
         <div className="sidebar__chats">
          
-        {rooms && rooms.map(room => <SidebarChat room={room} />)}
+        {rooms && rooms.map(room => <Link to={`/rooms/${room.id}`} > <SidebarChat room={room} /> </Link>)}
         </div>
 
         

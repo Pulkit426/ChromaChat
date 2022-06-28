@@ -50,8 +50,9 @@ function App() {
         <Routes>
 
         <Route path='/'>
-        {/* <Chat /> */}
         </Route>
+
+        <Route path='/rooms/:roomId' element={<Chat />} />
 
         </Routes>
       
