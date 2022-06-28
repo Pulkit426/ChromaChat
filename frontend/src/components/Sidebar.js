@@ -8,20 +8,19 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SidebarChat from './SidebarChat';
 import roomService from '../services/rooms'
 import {Link} from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import { newRoom } from '../reducers/rooms';
 
 const Sidebar = () => {
-  const [rooms, setRooms] = useState([])
-
-  useEffect(() => {
-    roomService.getAll().then(data => setRooms(data))
-  }, [])
+  const dispatch = useDispatch()
+  const rooms = useSelector(state => state.rooms)
 
   const createChat = async () => {
     const roomName = window.prompt("Enter the name of the room")
 
     if(roomName){
-      const newRoom = await roomService.create({name: roomName})
-      setRooms(prevRooms => [...prevRooms, newRoom])
+      const newRoomValue = await roomService.create({name: roomName})
+      dispatch( newRoom(newRoomValue))
     }
   
   }
