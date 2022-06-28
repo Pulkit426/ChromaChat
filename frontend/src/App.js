@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 
 function App() {
   const dispatch = useDispatch()
-  const messages = useSelector(state => state)
+  const messages = useSelector(state => state.messages)
   
   const initializeAllMessages = async () => {
     const allMessages = await messageService.getAll()

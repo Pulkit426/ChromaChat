@@ -12,7 +12,7 @@ import { newMessage } from '../reducers/messages';
 
 const Chat = () => {
   const dispatch = useDispatch()
-  const messages = useSelector(state => state)
+  const messages = useSelector(state => state.messages)
   console.log("INISDE CHAT COMPONENT",messages)
 
   const [messageInput,setMessageInput] = useState('')
