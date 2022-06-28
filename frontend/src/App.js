@@ -6,6 +6,7 @@ import Pusher from 'pusher-js'
 import messageService from './services/messages'
 import { useDispatch, useSelector } from 'react-redux';
 import { intitializeMessages, newMessage } from './reducers/messages';
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 
 function App() {
   const dispatch = useDispatch()
@@ -40,13 +41,28 @@ function App() {
   console.log(messages)
 
   return (
-    <div className="app">
+   
+      <div className="app">
       <div className='app_body'>
+      <Router>
         <Sidebar />
-        <Chat />
+        
+        <Routes>
+
+        <Route path='/'>
+        {/* <Chat /> */}
+        </Route>
+
+        </Routes>
+      
+        
+
+        </Router>
       </div>
       
     </div>
+  
+    
   );
 }
 
