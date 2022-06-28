@@ -4,6 +4,8 @@ const messagesReducer = (state=[],action) => {
             return [...action.data]
         case 'NEW_MESSAGE': 
             return [...state,action.data]
+        default:
+            return state
     }
 }
 
