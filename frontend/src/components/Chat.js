@@ -9,13 +9,20 @@ import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
 import { useDispatch, useSelector } from 'react-redux';
 import messageService from '../services/messages'
 import { newMessage } from '../reducers/messages';
+import {useParams} from "react-router-dom"
 
 const Chat = () => {
   const dispatch = useDispatch()
   const messages = useSelector(state => state.messages)
-  console.log("INISDE CHAT COMPONENT",messages)
+  const rooms = useSelector(state => state.rooms)
+  console.log("INISDE CHAT COMPONENT",messages, rooms)
 
   const [messageInput,setMessageInput] = useState('')
+  const {roomId} = useParams()
+
+  const filteredRoom = rooms.find(room => room.id===roomId)
+  console.log("FILTER ROOM", filteredRoom)
+  
 
   const setISTTime = () => { 
     var dateUTC = new Date();
@@ -49,7 +56,7 @@ const Chat = () => {
             <Avatar />
 
             <div className="chat__headerInfo">
-                <h3>Room Name</h3>
+                <h3>{filteredRoom.name}</h3>
                 <p> Last Seen at ... </p>
             </div>
 
