@@ -17,8 +17,12 @@ const Sidebar = () => {
 
   const createChat = async () => {
     const roomName = window.prompt("Enter the name of the room")
-    const newRoom = await roomService.create({name: roomName})
-    setRooms(prevRooms => [...prevRooms, newRoom])
+
+    if(roomName){
+      const newRoom = await roomService.create({name: roomName})
+      setRooms(prevRooms => [...prevRooms, newRoom])
+    }
+  
   }
 
   return (
