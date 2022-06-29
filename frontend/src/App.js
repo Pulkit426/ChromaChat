@@ -59,9 +59,7 @@ function App() {
         <Sidebar />
         
         <Routes>
-          
-
-        <Route path='/' />
+        <Route path='/login' element={ <LoginPage /> } />
 
         <Route path='/rooms/:roomId' element={<Chat />} />
 
