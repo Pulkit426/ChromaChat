@@ -9,6 +9,7 @@ import { intitializeMessages, newMessage } from './reducers/messages';
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import roomService from './services/rooms'
 import {intitializeRooms} from './reducers/rooms'
+import LoginPage from './components/LoginPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -58,9 +59,9 @@ function App() {
         <Sidebar />
         
         <Routes>
+          
 
-        <Route path='/'>
-        </Route>
+        <Route path='/' />
 
         <Route path='/rooms/:roomId' element={<Chat />} />
 
