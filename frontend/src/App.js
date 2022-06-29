@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import roomService from './services/rooms'
 import {intitializeRooms} from './reducers/rooms'
 import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -60,6 +61,7 @@ function App() {
         
         <Routes>
         <Route path='/login' element={ <LoginPage /> } />
+        <Route path='/signup' element={<SignUpPage /> } />
 
         <Route path='/rooms/:roomId' element={<Chat />} />
 
