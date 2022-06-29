@@ -1,5 +1,5 @@
 import { Container, Typography  } from "@mui/material"
-// import SignUpForm from "./SignUpForm";
+import SignUpForm from "./SignUpForm";
 
  
 const SignUpPage = () => {
@@ -18,6 +18,7 @@ const SignUpPage = () => {
         display: "flex", alignItems: "center", justifyContent: "center"}} >
           
         <Typography align="center" gutterBottom="true" variant="body1">
+            <SignUpForm />
         <Typography variant="body1" sx={{mt:3, color: "#475569", fontWeight: 500}}> Created by Pulkit </Typography>
         </Typography>
         </Container>
