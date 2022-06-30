@@ -4,12 +4,14 @@ const Pusher = require("pusher");
 const app = express()
 const cors = require('cors')
 const port= process.env.PORT || 3001
+require('dotenv').config()
 
 app.use(express.json())
 app.use(cors())
 const messagesRouter = require('./controllers/messages')
 const roomsRouter = require('./controllers/rooms')
 const usersRouter = require('./controllers/users')
+const loginRouter = require('./controllers/login')
  
 
 const pusher = new Pusher({
@@ -52,5 +54,6 @@ db.once('open', () => {
 app.use('/api/messages', messagesRouter)
 app.use('/api/rooms', roomsRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/login', loginRouter)
 
 app.listen(port, () => console.log(`Listening to port ${port}`))
