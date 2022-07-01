@@ -2,14 +2,26 @@ import React, {useState} from 'react'
 import { Typography, Container } from '@mui/material';
 import { useDispatch } from "react-redux";
 import LoginForm from './LoginForm'
+import {login} from '../reducers/user'
 
 const LoginPage = () => {
+
+  const dispatch = useDispatch()
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLogin = async (event) => {
         event.preventDefault();
+
+        try {
+          dispatch(login(username,password))
+          setUsername("");
+          setPassword("");
+        } catch (error) {
+          console.llog(error);
+        }
+
       };
 
     return (
