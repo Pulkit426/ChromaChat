@@ -11,6 +11,7 @@ import roomService from './services/rooms'
 import {intitializeRooms} from './reducers/rooms'
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage';
+import { initializeUser } from './reducers/user';
 
 function App() {
   const dispatch = useDispatch()
@@ -29,6 +30,7 @@ function App() {
   }
 
   useEffect(() => {
+    dispatch(initializeUser())
     initializeAllMessages()
     initializeAllRooms()
   }, [])
