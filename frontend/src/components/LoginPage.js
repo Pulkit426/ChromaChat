@@ -19,7 +19,7 @@ const LoginPage = () => {
           setUsername("");
           setPassword("");
         } catch (error) {
-          console.llog(error);
+          console.log(error);
         }
 
       };

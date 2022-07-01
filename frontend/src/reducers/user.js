@@ -31,7 +31,7 @@ const userSlice = createSlice({
     }
 })
 
-export const {setUser, appendUser, setToken} = usersSlice.actions
+export const {setUser, appendUser, setToken} = userSlice.actions
 
 export const initializeUser = () => {
     return async dispatch => {
@@ -76,4 +76,4 @@ export const logout = () => {
     }
 }
 
-export default usersSlice.reducer
+export default userSlice.reducer
