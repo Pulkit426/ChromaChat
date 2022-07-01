@@ -6,9 +6,13 @@ import LockIcon from '@mui/icons-material/Lock';
 import PersonIcon from '@mui/icons-material/Person';
 import {Formik, Field, Form, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
+import { signUp } from "../reducers/user";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
-
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
     const initialValues = {
         name: '',
@@ -27,6 +31,8 @@ const SignUpForm = () => {
     const handleSubmit = (value,props) => {
 
        const {name, username, password} = value
+       dispatch(signUp(name,username,password))
+       setTimeout(() => navigate('/'), 3000)
       
     }
 

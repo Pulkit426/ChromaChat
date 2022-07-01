@@ -62,6 +62,7 @@ export const signUp = (name, username, password) => {
     return async dispatch => {
         try{
             const newUser = await userService.signUp({name,username,password})
+            console.log("INSIDE SIGNUP", newUser)
         }
         catch(error){
             console.log("Signup error")
