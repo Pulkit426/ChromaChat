@@ -26,7 +26,7 @@ const userSlice = createSlice({
         setToken(state,action){
             console.log('INSIDE SETTOKEN')
             const user = action.payload
-            //pending function
+            userService.setToken(user.token)
         }
     }
 })
@@ -40,6 +40,7 @@ export const initializeUser = () => {
     if (loggedUser) {
       const user = JSON.parse(loggedUser);
       dispatch(setUser(user))
+      dispatch(setToken(user))
     }
     }
 }
@@ -73,7 +74,7 @@ export const signUp = (name, username, password) => {
 export const logout = () => {
     return async dispatch => {
         dispatch(setUser(null))
-       //pending token code
+        userService.setToken(null)
     }
 }
 
