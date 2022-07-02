@@ -3,9 +3,10 @@ import { Typography, Container } from '@mui/material';
 import { useDispatch } from "react-redux";
 import LoginForm from './LoginForm'
 import {login} from '../reducers/user'
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
-
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
     const [username, setUsername] = useState("");
@@ -18,6 +19,7 @@ const LoginPage = () => {
           dispatch(login(username,password))
           setUsername("");
           setPassword("");
+          navigate('/')
         } catch (error) {
           console.log(error);
         }

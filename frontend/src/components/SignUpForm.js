@@ -32,7 +32,7 @@ const SignUpForm = () => {
 
        const {name, username, password} = value
        dispatch(signUp(name,username,password))
-       setTimeout(() => navigate('/'), 3000)
+       setTimeout(() => navigate('/login'), 3000)
       
     }
 
