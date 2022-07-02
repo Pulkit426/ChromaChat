@@ -8,10 +8,12 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux';
 import messagesReducer from './reducers/messages';
 import roomsReducer from './reducers/rooms';
+import userReducer from './reducers/user' 
 
 const reducer = combineReducers({
   messages: messagesReducer,
-  rooms: roomsReducer
+  rooms: roomsReducer,
+  user: userReducer
 })
 
 const store = createStore(reducer, applyMiddleware(thunk)) 
