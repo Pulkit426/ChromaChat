@@ -56,7 +56,7 @@ const Chat = () => {
             <Avatar />
 
             <div className="chat__headerInfo">
-                <h3>{filteredRoom.name}</h3>
+                <h3>{filteredRoom && filteredRoom.name}</h3>
                 <p> Last Seen at ... </p>
             </div>
 

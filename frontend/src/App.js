@@ -12,11 +12,13 @@ import {intitializeRooms} from './reducers/rooms'
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage';
 import { initializeUser } from './reducers/user';
+import {Navigate} from 'react-router-dom'
 
 function App() {
   const dispatch = useDispatch()
   const messages = useSelector(state => state.messages)
   const rooms = useSelector(state => state.rooms)
+  const user = useSelector(state => state.user)
   
   const initializeAllMessages = async () => {
     const allMessages = await messageService.getAll()
@@ -59,13 +61,20 @@ function App() {
       <div className="app">
       <div className='app_body'>
       <Router>
-        <Sidebar />
+        
         
         <Routes>
+        <Route path='/' element={user && user.token ? <Sidebar /> : <Navigate to='/login' />} /> 
         <Route path='/login' element={ <LoginPage /> } />
         <Route path='/signup' element={<SignUpPage /> } />
+        <Route path='/rooms'  element={<Sidebar />} />
 
-        <Route path='/rooms/:roomId' element={<Chat />} />
+        <Route path='/rooms/:roomId' element={
+        <>
+        <Sidebar />
+        {rooms && <Chat />}
+        </>} 
+        />
 
         </Routes>
       
