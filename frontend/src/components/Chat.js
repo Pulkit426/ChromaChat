@@ -13,6 +13,7 @@ import {useParams} from "react-router-dom"
 
 const Chat = () => {
   const dispatch = useDispatch()
+  const user = useSelector(state => state.user)
   const messages = useSelector(state => state.messages)
   const rooms = useSelector(state => state.rooms)
   console.log("INISDE CHAT COMPONENT",messages, rooms)
@@ -39,11 +40,12 @@ const Chat = () => {
     event.preventDefault()
 
     const msg = await messageService.create({
-      name: "Pulkit",
-      message: messageInput,
-      timestamp: setISTTime(),
-      received: false
-    })
+        name: user.username,
+        message: messageInput,
+        timestamp: setISTTime(),
+        received: true,
+        room: roomId
+      })
 
     dispatch(newMessage(msg))
     setMessageInput('')
@@ -77,7 +79,8 @@ const Chat = () => {
         </div>
 
       <div className="chat__body">
-        {messages && messages.slice().map((message) => {
+        {messages && messages.slice().filter(msg => msg.room === roomId).
+        map((message) => {
           return (
             <p className={`chat__message ${message.received && 'chat__receiver'}`}>
           <span className="chat__name">
