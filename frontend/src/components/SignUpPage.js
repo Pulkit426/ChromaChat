@@ -1,4 +1,5 @@
 import { Container, Typography  } from "@mui/material"
+import LoginNavbar from "./LoginNavbar";
 import SignUpForm from "./SignUpForm";
 
  
@@ -6,7 +7,8 @@ const SignUpPage = () => {
    
 
     return (
-        <div>
+        <div style={{display: "flex",flex: 1, flexDirection:"column", alignItems: "center", justifyContent: "center"}}>
+        <LoginNavbar />
 
        <Typography align="center" gutterBottom="true" variant="body1" sx={{p: "1rem", m: "0.5rem", color: "gray", fontSize: "1.5rem", fontWeight: 600}}>
         Create a New Account

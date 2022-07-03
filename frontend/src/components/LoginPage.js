@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import LoginForm from './LoginForm'
 import {login} from '../reducers/user'
 import { useNavigate } from 'react-router-dom';
+import LoginNavbar from './LoginNavbar';
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -27,7 +28,9 @@ const LoginPage = () => {
       };
 
     return (
-        <div style={{display: "flex", flexDirection:"row", alignItems: "center", justifyContent: "center"}}>
+        <div style={{display: "flex",flex: 1, flexDirection:"column", alignItems: "center", justifyContent: "center"}}>
+
+          <LoginNavbar />
 
 
        <Typography align="center" gutterBottom="true" variant="body1" sx={{p: "1rem", m: "1rem", color: "gray", fontSize: "1.5rem", fontWeight: 600}}>
