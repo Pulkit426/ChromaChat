@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-name: String
+name: String,
+messages: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'messageContent'
+}
 })
 
 schema.set('toJSON', {
