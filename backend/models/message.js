@@ -4,7 +4,11 @@ const schema = mongoose.Schema({
 message: String,
 name: String,
 timestamp: String,
-received: Boolean
+received: Boolean,
+room : {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'Room'
+}
 })
 
 schema.set('toJSON', {
