@@ -60,7 +60,7 @@ const Sidebar = () => {
 
         <div className="sidebar__chats">
          
-        {rooms && rooms.map(room => <Link style={{textDecoration: "none", color: "black"}} to={`/rooms/${room.id}`} > <SidebarChat room={room} /> </Link>)}
+        {rooms && rooms.map(room => <Link style={{textDecoration: "none", color: "black"}} to={`/rooms/${room.id}`} > <SidebarChat room={room} roomId={room.id} /> </Link>)}
         </div>
 
         
