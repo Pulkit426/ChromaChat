@@ -8,7 +8,7 @@ const SidebarChat = (props) => {
 
   const lastMessage= messages.slice()
                               .filter(message => message.room === props.roomId)
-  console.log(lastMessage)
+  console.log("LAST MESSAGE" , lastMessage)
                               
 
   return (
@@ -16,7 +16,7 @@ const SidebarChat = (props) => {
        <Avatar />
         <div className="sidebarChat__info">
             <h2> {props.room.name} </h2>
-            <p>{lastMessage && `${lastMessage[lastMessage.length-1].name} : ${lastMessage[lastMessage.length-1].message}`} </p>
+            <p>{lastMessage.length!==0 && `${lastMessage[lastMessage.length-1]?.name} : ${lastMessage[lastMessage.length-1]?.message}`} </p>
         </div>
     </div>
   )
