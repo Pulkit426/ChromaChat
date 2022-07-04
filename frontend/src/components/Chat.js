@@ -82,7 +82,7 @@ const Chat = () => {
         {messages && messages.slice().filter(msg => msg.room === roomId).
         map((message) => {
           return (
-            <p className={`chat__message ${message.received && 'chat__receiver'}`}>
+            <p className={`chat__message ${message.name === user.username && 'chat__receiver'}`}>
           <span className="chat__name">
             {message.name}
           </span>
