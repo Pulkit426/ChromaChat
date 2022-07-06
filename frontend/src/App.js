@@ -67,13 +67,15 @@ function App() {
         <Route path='/' element={user && user.token ? <Sidebar /> : <Navigate to='/login' />} /> 
         <Route path='/login' element={ <LoginPage /> } />
         <Route path='/signup' element={<SignUpPage /> } />
-        <Route path='/rooms'  element={<Sidebar />} />
+        <Route path='/rooms'  element={user && user.token ? <Sidebar /> : <Navigate to='/login' />} />
 
         <Route path='/rooms/:roomId' element={
-        <>
+        user && user.token 
+        ? <>
         <Sidebar />
         {rooms && <Chat />}
-        </>} 
+        </>
+        : <Navigate to='/login' />} 
         />
 
         </Routes>
