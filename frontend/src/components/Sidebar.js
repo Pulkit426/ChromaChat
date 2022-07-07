@@ -3,13 +3,13 @@ import './Sidebar.css'
 import {Avatar, IconButton} from '@mui/material'
 import ChatIcon from '@mui/icons-material/Chat';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SidebarChat from './SidebarChat';
 import roomService from '../services/rooms'
 import {Link} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { newRoom } from '../reducers/rooms';
+import LogoutMenu from './LogoutMenu';
 
 const Sidebar = () => {
   const dispatch = useDispatch()
@@ -39,9 +39,7 @@ const Sidebar = () => {
                 <ChatIcon/>
               </IconButton>
 
-              <IconButton>
-                <MoreVertIcon />  
-              </IconButton>
+              <LogoutMenu />
            
            
             </div>
