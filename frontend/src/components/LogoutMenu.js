@@ -3,17 +3,27 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import {useNavigate} from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { logout } from '../reducers/user';
 
 const ITEM_HEIGHT = 35;
 
 export default function LogoutMenu() {
+  const dispatch = useDispatch()
+  const navigate= useNavigate()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+
+  const handleLogout = () => {
     setAnchorEl(null);
+    window.localStorage.clear();
+    dispatch(logout())
+    navigate('/')
+  
   };
 
   return (
@@ -43,7 +53,7 @@ export default function LogoutMenu() {
           },
         }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogout}>
          Logout
         </MenuItem>
       </Menu>

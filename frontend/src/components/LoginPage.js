@@ -20,7 +20,7 @@ const LoginPage = () => {
           dispatch(login(username,password))
           setUsername("");
           setPassword("");
-          navigate('/')
+          navigate('/rooms')
         } catch (error) {
           console.log(error);
         }
