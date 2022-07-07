@@ -45,7 +45,7 @@ export default function LogoutMenu() {
         }}
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
+        onClose={handleLogout}
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
