@@ -18,9 +18,9 @@ router.get('/', (req,res) => {
 
 router.post('/', (req,res) => {
 
-    if (!request.user) {
-        return response.status(401).json({ error: 'token missing or invalid' })
-      }
+    // if (!request.user) {
+    //     return response.status(401).json({ error: 'token missing or invalid' })
+    //   }
       
     const dbMessage = req.body
 
