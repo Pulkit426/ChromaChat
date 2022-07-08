@@ -20,7 +20,7 @@ const LoginPage = () => {
           dispatch(login(username,password))
           setUsername("");
           setPassword("");
-          setTimeout(() => navigate('/rooms'), 3000)
+          setTimeout(() => navigate('/rooms'), 500)
         } catch (error) {
           console.log(error);
         }

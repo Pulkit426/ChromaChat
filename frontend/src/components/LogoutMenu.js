@@ -20,10 +20,11 @@ export default function LogoutMenu() {
 
   const handleLogout = () => {
     setAnchorEl(null);
+    if(window.confirm('Do you want to Logout')){
     window.localStorage.clear();
     dispatch(logout())
     navigate('/')
-  
+}
   };
 
   return (
