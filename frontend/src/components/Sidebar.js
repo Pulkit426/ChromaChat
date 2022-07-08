@@ -14,6 +14,7 @@ import LogoutMenu from './LogoutMenu';
 const Sidebar = () => {
   const dispatch = useDispatch()
   const rooms = useSelector(state => state.rooms)
+  const [filteredRooms, setFilteredRooms] = useState(rooms) 
 
   const createChat = async () => {
     const roomName = window.prompt("Enter the name of the room")
@@ -21,8 +22,14 @@ const Sidebar = () => {
     if(roomName){
       const newRoomValue = await roomService.create({name: roomName})
       dispatch( newRoom(newRoomValue))
+      setFilteredRooms(prevRooms => [...prevRooms, newRoomValue])
     }
   
+  }
+
+  const handleSearch = (event) => {
+    const searchValue = event.target.value
+    setFilteredRooms(rooms.filter(room => room.name.toLowerCase().includes(searchValue.toLowerCase())))
   }
 
   return (
@@ -48,7 +55,7 @@ const Sidebar = () => {
         <div className="sidebar__search">
           <div className="sidebar__searchContainer">
           <SearchOutlinedIcon />
-          <input type="text" placeholder="Search or start a new chat" />
+          <input type="text" placeholder="Search Rooms" onChange= {handleSearch}/>
           </div>
         </div>
 
@@ -58,7 +65,7 @@ const Sidebar = () => {
 
         <div className="sidebar__chats">
          
-        {rooms && rooms.map(room => <Link style={{textDecoration: "none", color: "black"}} to={`/rooms/${room.id}`} > <SidebarChat room={room} roomId={room.id} /> </Link>)}
+        {rooms && filteredRooms.map(room => <Link style={{textDecoration: "none", color: "black"}} to={`/rooms/${room.id}`} > <SidebarChat room={room} roomId={room.id} /> </Link>)}
         </div>
 
         
