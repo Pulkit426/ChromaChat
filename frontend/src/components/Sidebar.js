@@ -15,6 +15,11 @@ const Sidebar = () => {
   const dispatch = useDispatch()
   const rooms = useSelector(state => state.rooms)
   const [filteredRooms, setFilteredRooms] = useState(rooms) 
+  console.log("SIDEBAR FILTERED ROOMS",filteredRooms)
+
+  useEffect(() => {
+    setFilteredRooms(rooms)
+  }, [rooms])
 
   const createChat = async () => {
     const roomName = window.prompt("Enter the name of the room")
