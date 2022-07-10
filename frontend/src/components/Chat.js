@@ -61,21 +61,6 @@ const Chat = () => {
                 <h3>{filteredRoom && filteredRoom.name}</h3>
                 <p> Last Seen at ... </p>
             </div>
-
-            <div className="chat__headerRight">
-              <IconButton>
-                <SearchOutlinedIcon />
-              </IconButton>
-              
-              <IconButton>
-              <AttachFileIcon />
-              </IconButton>
-
-              <IconButton>
-                <MoreVertIcon /> 
-              </IconButton>
-          
-            </div>
         </div>
 
       <div className="chat__body">
