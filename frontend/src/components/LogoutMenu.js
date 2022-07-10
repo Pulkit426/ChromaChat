@@ -27,6 +27,10 @@ export default function LogoutMenu() {
 }
   };
 
+  const handleClose= () => {
+    setAnchorEl(null);
+  }
+
   return (
     <div>
       <IconButton
@@ -46,7 +50,7 @@ export default function LogoutMenu() {
         }}
         anchorEl={anchorEl}
         open={open}
-        onClose={handleLogout}
+        onClose={handleClose}
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
