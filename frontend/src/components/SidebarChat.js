@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux'
 const SidebarChat = (props) => {
   const messages  = useSelector(state => state.messages)
 
-  const lastMessage= messages.slice()
+  const filteredMessages= messages.slice()
                               .filter(message => message.room === props.roomId)
-  console.log("LAST MESSAGE" , lastMessage)
+  console.log("LAST MESSAGE" , filteredMessages)
                               
 
   return (
@@ -16,7 +16,7 @@ const SidebarChat = (props) => {
        <Avatar />
         <div className="sidebarChat__info">
             <h2> {props.room.name} </h2>
-            <p>{lastMessage.length!==0 && `${lastMessage[lastMessage.length-1]?.name} : ${lastMessage[lastMessage.length-1]?.message}`} </p>
+            <p>{filteredMessages.length!==0 && `${filteredMessages[filteredMessages.length-1]?.name} : ${filteredMessages[filteredMessages.length-1].message.split(" ").splice(0,5).join(" ")}`} </p>
         </div>
     </div>
   )
