@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const LoginNavbar = () => {
     return (
-        <AppBar position='static' sx={{backgroundColor: "#e5e7eb", mb: 3,  width: "100%", height: "60px"}}>
+        <AppBar sx={{backgroundColor: "#e5e7eb", mb: 5 , width: "100%", height: "60px"}}>
          <Toolbar>
 
          <Typography  component="div" style={{flex: 1}} > </Typography>

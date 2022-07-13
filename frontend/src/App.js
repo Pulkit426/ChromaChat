@@ -59,7 +59,7 @@ function App() {
   return (
    
       <div className="app">
-      <div className='app_body'>
+      <div className={user ? 'app_body' : 'app_loginBody'}>
       <Router>
         
         
