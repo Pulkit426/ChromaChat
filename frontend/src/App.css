@@ -2,7 +2,7 @@
     display: grid;
     place-items: center;
     height: 100vh;
-    background-color: #dadbd3;
+    background: linear-gradient(90deg, rgba(142,99,239,1) 0%, rgba(99,164,224,1) 56%, rgba(191,120,207,1) 100%);
 }
 
 .app_body{
