@@ -20,7 +20,7 @@
 .sidebar__search{
     display: flex;
     align-items: center;
-    background-color: #f6f6f6;
+    background-color: #e5e7eb;
     height: 39px;
     padding: 10px;
 }
@@ -60,7 +60,6 @@
 
 .sidebar__chats{
     flex: 1;
-    /* background-color: white; */
     overflow: scroll;
 
 }

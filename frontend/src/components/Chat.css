@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid lightgray;
+    background-color: #f0f9ff;
 }
 
 .chat__headerInfo{
@@ -67,7 +68,7 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    background-color: lightgray;
+    background-color: #d1d5db;
     border-top: 1px solid lightgray;
 }
 
