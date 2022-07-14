@@ -1,7 +1,7 @@
 .app{
     display: grid;
     place-items: center;
-    height: 110vh;
+    height: 115vh;
     background: linear-gradient(90deg, rgba(142,99,239,1) 0%, rgba(99,164,224,1) 56%, rgba(191,120,207,1) 100%);
 }
 

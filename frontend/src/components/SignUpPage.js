@@ -10,7 +10,7 @@ const SignUpPage = () => {
         <div style={{display: "flex",flex: 1, flexDirection:"column", alignItems: "center", justifyContent: "center"}}>
         <LoginNavbar />
 
-       <Typography align="center" gutterBottom="true" variant="body1" sx={{p: "1rem", m: "0.5rem", color: "gray", fontSize: "1.5rem", fontWeight: 600}}>
+       <Typography align="center" variant="body1" sx={{p: 1, m: 2, mt:10, color: "gray", fontSize: "1.5rem", fontWeight: 600}}>
         Create a New Account
         </Typography>
 
