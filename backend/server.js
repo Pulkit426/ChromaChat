@@ -9,6 +9,7 @@ require('dotenv').config()
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static('build'))
 const messagesRouter = require('./controllers/messages')
 const roomsRouter = require('./controllers/rooms')
 const usersRouter = require('./controllers/users')
@@ -56,5 +57,10 @@ app.use('/api/messages', userExtractor, messagesRouter)
 app.use('/api/rooms', roomsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
+
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+}); 
 
 app.listen(port, () => console.log(`Listening to port ${port}`))
