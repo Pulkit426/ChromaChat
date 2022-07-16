@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const Pusher = require("pusher");
 const app = express()
 const cors = require('cors')
+const path = require('path');
 const {userExtractor} = require('./utils/middleware')
  const port= process.env.PORT || 3001
 require('dotenv').config()
