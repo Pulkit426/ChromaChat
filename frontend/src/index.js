@@ -6,22 +6,15 @@ import thunk from "redux-thunk"
 import { applyMiddleware } from 'redux';
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux';
-import messagesReducer from './reducers/messages';
-import roomsReducer from './reducers/rooms';
-import userReducer from './reducers/user' 
-
-const reducer = combineReducers({
-  messages: messagesReducer,
-  rooms: roomsReducer,
-  user: userReducer
-})
-
-const store = createStore(reducer, applyMiddleware(thunk)) 
+import { PersistGate } from 'redux-persist/integration/react'
+import {store, persistor} from './store.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
+  <PersistGate loading={null} persistor={persistor}>
   <App />
-</Provider>
+  </PersistGate>
+  </Provider>
 );
 
