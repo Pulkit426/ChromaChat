@@ -84,7 +84,6 @@ const Chat = () => {
       </div>
 
     <div className="chat__footer">
-      <InsertEmoticonOutlinedIcon />
 
       <form onSubmit={sendMessage}>
         <input value={messageInput} 
@@ -94,8 +93,6 @@ const Chat = () => {
                required />
         <button type='submit'> Send </button>
       </form>
-
-      <MicNoneOutlinedIcon />
 
     </div>  
     </div>
