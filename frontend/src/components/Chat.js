@@ -59,7 +59,6 @@ const Chat = () => {
 
             <div className="chat__headerInfo">
                 <h3>{filteredRoom && filteredRoom.name}</h3>
-                <p> Last Seen at ... </p>
             </div>
         </div>
 
