@@ -28,11 +28,12 @@
 
 .chat__body{
     flex: 1;
-    background-image: url(https://i.pinimg.com/originals/45/ce/c7/45cec757faf8d07318cc829dcf21c697.jpg);
+    background-image: url(https://i.pinimg.com/236x/51/ed/c0/51edc046eb80046ee4755ee71d0f19ca--smartphone.jpg);
     background-repeat : repeat;
     background-position: center;
     padding : 30px;
     overflow: scroll;
+    background-color: #fae8ff;
 }
 
 .chat__message{
@@ -41,7 +42,7 @@
     padding: 10px;
     width: fit-content;
     border-radius: 10px;
-    background-color: white;
+    background-color: #e9d5ff;
     margin-bottom: 30px;
 }
 
@@ -60,7 +61,7 @@
 
 .chat__receiver{
     margin-left: auto;
-    background-color: #dcf8c6;
+    background-color: #a7f3d0;
 }
 
 .chat__footer{
@@ -76,6 +77,7 @@
     flex: 1;
     display: flex;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 .chat__footer > form > input {
@@ -84,11 +86,6 @@
     padding: 10px;
     border-radius: 30px;
     border: none;
-}
-
-.chat__footer > .MuiSvgIcon-root {
-    padding: 10px;
-    color: slategray;
 }
 
 .chat__footer > form > button{
