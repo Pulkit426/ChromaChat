@@ -31,6 +31,7 @@
     padding : 30px;
     overflow: scroll;
     background-color: #fae8ff;
+    color: white
 }
 
 .chat__message{
@@ -39,7 +40,7 @@
     padding: 10px;
     width: fit-content;
     border-radius: 10px;
-    background-color: #e9d5ff;
+    background-color: #3b82f6;
     margin-bottom: 30px;
 }
 
@@ -53,12 +54,13 @@
   top: -15px;
   font-weight: 800;
   font-size: xx-small;
+  color: black
    
 }
 
 .chat__receiver{
     margin-left: auto;
-    background-color: #a7f3d0;
+    background-color: #10b981;
 }
 
 .chat__footer{
