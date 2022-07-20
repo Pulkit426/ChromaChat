@@ -17,11 +17,11 @@ const SignUpPage = () => {
             
         <Container maxWidth='sm' 
         sx={{backgroundColor:'#e5e7eb', width: 370, height: 450, borderRadius: "1.2rem", mb: 8,
-        display: "flex", alignItems: "center", justifyContent: "center"}} >
-          
+        display: "flex", flexDirection: "column",  alignItems: "center", justifyContent: "center"}} >
+          <img src="/favicon.png" alt="logo"  style={{maxHeight: 80, margin: "1rem", marginBottom: "1.25rem"}}/>
         <Typography align="center" gutterBottom="true" variant="body1">
             <SignUpForm />
-        <Typography variant="body1" sx={{mt:3, color: "#475569", fontWeight: 500}}> Created by Pulkit </Typography>
+        <Typography variant="body1" sx={{mt:3, color: "#475569", fontWeight: 500}}> Created by Pulkit 👨‍💻 </Typography>
         </Typography>
         </Container>
         </div>

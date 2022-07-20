@@ -46,8 +46,8 @@ const LoginPage = () => {
 
         <Container maxWidth='sm' 
         sx={{backgroundColor:'#e5e7eb', width: 350, height: 375, borderRadius: "1.2rem", mb: 10,
-        display: "flex", alignItems: "center", justifyContent: "center"}} >
-          
+        display: "flex", flexDirection: "column" ,alignItems: "center", justifyContent: "center"}} >
+          <img src="/favicon.png" alt="logo"  style={{maxHeight: 80, margin: "1rem", marginBottom: "1.25rem"}}/>
           <Typography align="center" gutterBottom="true" variant="body1">
           
         <LoginForm
@@ -63,7 +63,7 @@ GUEST LOGIN
         </Button>
 
 
-<Typography variant="body1" sx={{mt:2.5, mb:0.5, color: "#475569", fontWeight: 500}}> Created by Pulkit </Typography>
+<Typography variant="body1" sx={{mt:2.5, mb:0.5, color: "#475569", fontWeight: 500}}> Created by Pulkit 👨‍💻</Typography>
         </Typography>
         </Container>
       </div>
