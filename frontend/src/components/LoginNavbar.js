@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const LoginNavbar = () => {
     return (
-        <AppBar sx={{backgroundColor: "#e5e7eb", mb: 5 , width: "100%", height: "60px"}}>
+        <AppBar sx={{backgroundColor: "#e0e7ff", mb: 5 , width: "100%", height: "60px"}}>
          <Toolbar>
 
          <img src='\logo.png' alt="Logo" style={{maxWidth: 150, margin: "1rem", marginBottom: "1.25rem"}} />

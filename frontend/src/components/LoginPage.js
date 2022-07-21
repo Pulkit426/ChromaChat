@@ -45,7 +45,7 @@ const LoginPage = () => {
 
 
         <Container maxWidth='sm' 
-        sx={{backgroundColor:'#e5e7eb', width: 350, height: 375, borderRadius: "1.2rem", mb: 10,
+        sx={{backgroundColor:'#e0e7ff', width: 350, height: 375, borderRadius: "1.2rem", mb: 10,
         display: "flex", flexDirection: "column" ,alignItems: "center", justifyContent: "center"}} >
           <img src="/favicon.png" alt="logo"  style={{maxHeight: 80, margin: "1rem", marginBottom: "1.25rem"}}/>
           <Typography align="center" gutterBottom="true" variant="body1">
