@@ -11,6 +11,7 @@ import LogoutMenu from './LogoutMenu';
 
 const Sidebar = () => {
   const dispatch = useDispatch()
+  const user = useSelector(state => state.user)
   const rooms = useSelector(state => state.rooms)
   const [filteredRooms, setFilteredRooms] = useState(rooms) 
   console.log("SIDEBAR FILTERED ROOMS",filteredRooms)
@@ -38,7 +39,7 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
         <div className='sidebar__header'>
-        <Avatar />
+        <Avatar src={`https://api.multiavatar.com/${user.username}.svg`}/>
             <div className='sidebar__headerRight'>
               <LogoutMenu />           
             </div>

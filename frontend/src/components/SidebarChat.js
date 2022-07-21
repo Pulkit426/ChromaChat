@@ -13,7 +13,7 @@ const SidebarChat = (props) => {
 
   return (
     <div className='sidebarChat'>
-       <Avatar />
+       <Avatar src={`https://avatars.dicebear.com/api/bottts/${props.roomId}.svg`} />
         <div className="sidebarChat__info">
             <h2> {props.room.name} </h2>
             <p>{filteredMessages.length!==0 && `${filteredMessages[filteredMessages.length-1]?.name} : ${filteredMessages[filteredMessages.length-1].message.split(" ").splice(0,5).join(" ")}`} </p>

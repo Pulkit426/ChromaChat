@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
 import './Chat.css'
 import {Avatar, IconButton} from '@mui/material'
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
-import MicNoneOutlinedIcon from '@mui/icons-material/MicNoneOutlined';
 import { useDispatch, useSelector } from 'react-redux';
 import messageService from '../services/messages'
 import { newMessage } from '../reducers/messages';
@@ -55,7 +50,7 @@ const Chat = () => {
   return (
     <div className='chat'>
         <div className="chat__header">
-            <Avatar />
+        <Avatar src={`https://avatars.dicebear.com/api/bottts/${roomId}.svg`} />
 
             <div className="chat__headerInfo">
                 <h3>{filteredRoom && filteredRoom.name}</h3>
