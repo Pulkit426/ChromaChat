@@ -22,6 +22,12 @@
     font-weight: 600;
 }
 
+.chat__headerUser {
+    margin-right: 5px;
+    font-weight: 700;
+    color: orchid
+}
+
 
 .chat__body{
     flex: 1;

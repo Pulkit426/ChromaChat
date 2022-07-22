@@ -55,10 +55,15 @@ const Chat = () => {
             <div className="chat__headerInfo">
                 <h3>{filteredRoom && filteredRoom.name}</h3>
             </div>
+
+            <div className="chat__headerUser">
+               {user.username} 
+            </div>
+            logged in 
         </div>
 
       <div className="chat__body">
-        {messages && messages.slice().filter(msg => msg.room === roomId).
+        {messages && messages.slice().filter(msg =>       msg.room === roomId).
         map((message) => {
           return (
             <p className={`chat__message ${message.name === user.username && 'chat__receiver'}`}>
