@@ -65,8 +65,8 @@ function App() {
         
         <Routes>
         <Route path='/' element={user && user.token ? <Sidebar /> : <Navigate to='/login' />} /> 
-        <Route path='/login' element={ <LoginPage /> } />
-        <Route path='/signup' element={<SignUpPage /> } />
+        <Route path='/login' element={ user && user.token ? <Navigate to='/rooms' /> : <LoginPage /> } />
+        <Route path='/signup' element={user && user.token ? <Navigate to='/rooms' /> : <SignUpPage /> } />
         <Route path='/rooms'  element={user && user.token ? <Sidebar /> : <Navigate to='/login' />} />
 
         <Route path='/rooms/:roomId' element={
